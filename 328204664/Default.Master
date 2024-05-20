@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="_328204664.Default" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+
+        <style type="text/css"> 
+            .all 
+        {
+            background-color:green;
+            border-radius: 0% 50% 50% 0% / 0% 50% 50% 0%;
+            
+		    position: relative;
+		    bottom: 20px;
+		    left:1px;
+		    text-align:left;
+            color: white;
+            float:left;
+        }
+
+            .auto-style1 {
+                width: 1100px;
+                height: 50px;
+            }
+
+            .auto-style2 {
+                height: 50px;
+            }
+            .auto-style3 {
+                width: 230px;
+                height: 50px;
+            }
+
+        </style>
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style =" background-color:#242424">
+    <form id="form1" runat="server">
+    <div >
+    <table style=" width:1100px; margin:0 auto; background-color:white">
+        <%--Header Starts Here--%>
+        <tr style=" width:90px; border-color:#5f98f3; background-color:White">
+            <td class="auto-style2">
+            <asp:Image ID="Image1" runat="server" Height="100px" 
+                    ImageUrl="~/Images/TBeerlogo.png" Width="100px"/></td>
+            <td align="center" class="auto-style1">
+                <asp:Label ID="Label1" runat="server" Text="TBeer Website" 
+                    Font-Bold="True" Font-Names="Arial Rounded MT Bold" 
+                    ForeColor="#15D0D3" Font-Size="80px" Width="600px" ></asp:Label>
+                    <br /><b>For Those Who Love Beer...!</b>
+                    </td>
+            <td style=" text-align:right" class="auto-style3">
+                <asp:ImageButton ID="ImageButton1" runat="server" Height="50px" style=" text-align:left" postbackurl="https://he-il.facebook.com" 
+                    ImageUrl="~/Images/facebooklogo.jpg" Width="50px"/>
+                <asp:ImageButton ID="ImageButton2" runat="server" Height="50px" style=" text-align:left" postbackurl="https://www.instagram.com/" 
+                    ImageUrl="~/Images/Instagramlogo.jpg" Width="50px" />
+                <asp:ImageButton ID="ImageButton4" runat="server" Height="70px" style=" text-align:left"
+                    ImageUrl="~/Images/shoppingcarticon.png" Width="70px" CausesValidation="False" 
+                    onclick="ImageButton4_Click" />
+                <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="X-Large" 
+                    ForeColor="Black"></asp:Label>
+            </td>
+        </tr>
+        <%--Header Ends Here--%>
+
+        
+        <%--Navigation Starts Here--%>
+        <tr style=" width:1100px; height:40px; background-color:#FFFFFF">
+            <td colspan="3" style=" text-align:right">
+                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" 
+                    StaticSubMenuIndent="19px">
+                    <Items>
+                        <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                       <asp:MenuItem Text="All Products" Value="All Products" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Registration" Value="Registration" NavigateUrl="~/Register.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="User Login" Value="User Login" NavigateUrl="~/Login.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="About Us" Value="About Us"></asp:MenuItem>
+                        <asp:MenuItem Text="Contact Us" Value="Contact Us"></asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BackColor="#FFFFFF" BorderColor="#15D0D3" 
+                        BorderStyle="Outset" ForeColor="Black" Height="40px" />
+                    <StaticMenuItemStyle Font-Bold="True" Font-Size="Large" ForeColor="Black" 
+                        HorizontalPadding="54px" />
+                    <StaticSelectedStyle BackColor="#FFFFFF" BorderColor="#15D0D3"
+                        BorderStyle="Inset" ForeColor="Black" Height="40px" />
+                </asp:Menu>
+            </td>
+        </tr>
+        <%--Navigation Ends Here--%>
+
+
+        <%--Ads Banner Starts Here--%>
+        <tr style=" width:1110px; height:310px;">
+            <td colspan="3">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <asp:Timer ID="Timer1" runat="server" Interval="2000" ontick="Timer1_Tick">
+                        </asp:Timer>
+                        <asp:Image ID="Image2" runat="server" BackColor="White" BorderColor="Gray" 
+                            BorderStyle="Double" Height="270px" Width="1140px" ImageAlign="Middle"/>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </td>
+        </tr>
+        <%--Ads Banner Ends Here--%>
+
+
+        <%--Your Content Starts Here--%>
+        <tr>
+            <td colspan="3">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                    <p>
+                   </p>
+        
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+        <%--Your Content Ends Here--%>
+
+
+        <%--Footer Starts Here--%>
+        <tr style=" width:1100px; height:25px; background-color:#15D0D3; text-align:center; color:White">
+            <td colspan="3">
+                &copy; Online Beer Shopping Center Pvt. | All rights Reserved to Alon'sBeer
+            </td>
+        </tr>
+        <%--Footer Ends Here--%>
+
+    </table>
+        
+    </div>
+    </form>
+</body></html>
